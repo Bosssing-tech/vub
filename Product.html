@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Image/CUEEE.png" alt="Logo">
+        </div>
+        <div class="hamburger-menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Product.html">Product</a></li>
+                <li><a href="AboutUs.html">About us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="side-menu">
+        <a href="index.html">Home</a>
+        <a href="Product.html">Product</a>
+        <a href="AboutUs.html">About us</a>
+    </div>
+
+    <main class="product-container">
+        <!-- Row 1 -->
+        <div class="product-card">
+            <img src="Image/FURY.png" alt="Product Image" class="product-image">
+            <h2 class="product-name">Product Name</h2>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="Image/FURY.png" alt="Product Image" class="product-image">
+            <h2 class="product-name">Product Name</h2>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="Image/FURY.png" alt="Product Image" class="product-image">
+            <h2 class="product-name">Product Name</h2>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="Image/FURY.png" alt="Product Image" class="product-image">
+            <h2 class="product-name">Product Name</h2>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="Image/FURY.png" alt="Product Image" class="product-image">
+            <h2 class="product-name">Product Name</h2>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        
+    
+    </main>
+    
+    
+    <footer class="footer">
+        <div class="align-left">
+            <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+        </div>
+        <div class="align-center">
+            <img src="Image/CUEEE.png" alt="Cue logo">
+        </div>
+        <div class="align-right social-icons">
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="Image/IG.png" alt="Instagram Logo" class="social-icon">
+            </a>
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="Image/FB.png" alt="Facebook Logo" class="social-icon">
+            </a>
+            <a href="https://twitter.com" target="_blank">
+                <img src="Image/Twitter.png" alt="Twitter Logo" class="social-icon">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle side menu
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const sideMenu = document.querySelector('.side-menu');
+
+        hamburgerMenu.addEventListener('click', () => {
+            sideMenu.classList.toggle('show');
+        });
+
+        // Add to Cart functionality
+        const addToCartButton = document.querySelector('.add-to-cart-btn');
+        addToCartButton.addEventListener('click', () => {
+            alert('Item added to cart!');
+        });
+    </script>
+</body>
+</html>

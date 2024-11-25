@@ -1,0 +1,576 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #afa9a93c;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #19191986;
+}
+
+::-webkit-scrollbar-thumb:hover { 
+    background-color: #9b9898da;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(0, 0, 0);
+    position: relative;
+    overflow-x: hidden;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(45deg, rgb(38, 126, 131), rgb(0, 0, 0));    
+    height: 310%;
+    z-index: -1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    background: rgba(189, 60, 124, 0);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    gap: 20px;
+}
+
+.Cup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+.Cup img {
+    height: 70%;
+    width: 120%;
+    margin-top: 125%;
+}
+
+/* Adjust image size on smaller screens */
+@media (max-width: 768px) {
+    .Cup img {
+        width: 100%;
+        height: auto;
+        margin-top: 200%;  /* Remove margin-top to avoid overlap */
+    }
+}
+
+@media (max-width: 480px) {
+    .Cup img {
+        width: 80%;
+        height: auto;
+    }
+}
+
+.logo img {
+    height: 135px;
+    width: 135px;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 150px;
+    margin-right: 90px;
+}
+
+nav .nav-links li {
+    display: inline;
+}
+
+nav .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent;
+    font-family: Arial, sans-serif;
+}
+
+nav .nav-links a:hover,
+nav .nav-links a:active {
+    color: #afacaf;
+    border-bottom: 2px solid #080508;
+    cursor: pointer;
+}
+
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    position: fixed;
+    top: 80px;
+    right: 50px;
+    z-index: 2000;
+}
+
+.hamburger-menu div {
+    width: 40px;
+    height: 3px;
+    background-color: white;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -50%; /* Initially off-screen */
+    width: 50%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s ease;
+    z-index: 1500;
+}
+
+.side-menu.show {
+    left: 0; /* Position to the right when showing */
+}
+
+.side-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    margin: 15px 0;
+    transition: color 0.3s ease;
+}
+
+.side-menu a:hover {
+    color: #ffffff52;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex;
+    }
+
+    nav .nav-links {
+        display: none;
+    }
+
+    .slideshow-container {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .slideshow-container {
+        display: block;
+    }
+}
+
+/* Styling for h1, h3 */
+h1, h3, p {
+    position: absolute;
+    left: 100px;
+    font-family: Arial, sans-serif;
+    transform: translateY(-50%);
+    background: linear-gradient(45deg, rgb(151, 145, 145), rgb(252, 251, 255));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Styling for h1 */
+h1 { 
+    top: 50%;
+    font-size: 120px;
+}
+
+/* Styling for h3 */
+h3 {
+    top: 60%;
+    font-size: 50px;
+}
+
+/* Styling for p (paragraph) */
+p {
+    position: absolute;
+    top: 71%;
+    left: 100px;
+    font-size: 22px;
+    line-height: 1.5;
+    width: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(45deg, rgb(151, 145, 145), rgb(252, 251, 255));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Adjust font sizes for smaller screens */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 90px;
+    }
+
+    h3 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 18px;
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 70px;
+        left: 50px;
+    }
+
+    h3 {
+        font-size: 35px;
+        left: 50px;
+    }
+
+    p {
+        font-size: 16px;
+        left: 50px;
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 50px;
+        left: 20px;
+    }
+
+    h3 {
+        font-size: 30px;
+        left: 25px;
+    }
+
+    p {
+        font-size: 14px;
+        left: 20px;
+        width: 90%;
+    }
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    position: absolute;
+    top: 55%;
+    right: 10%;
+    transform: translateY(-50%);
+    width: 500px;
+    height: 600px;
+    z-index: 2;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.313);
+}
+
+/* Slideshow Image */
+.mySlides {
+    display: none;
+    width: 100%;
+    height: 600px;
+    border-radius: 10px;
+}
+
+/* Dot Container */
+.dot-container {
+    text-align: center;
+    margin-top: -10px; /* Increased margin to ensure dots are below slideshow */
+    position: absolute;
+    bottom: 10px; /* Position dots towards the bottom of the slideshow container */
+    left: 77.5%;
+    transform: translateX(-50%); /* Centers the dots */
+    width: 100%; /* Ensures it takes the full width of the slideshow container */
+}
+
+/* Dot */
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover/Active Dot Style */
+.dot:hover,
+.dot.active {
+    background-color: #717171;
+}
+
+/* Fade Animation for Slideshow */
+.fade {
+    animation: fade 1.5s ease-in-out infinite;
+}
+
+@keyframes fade {
+    0% { opacity: 0; }
+    20%, 80% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+button, .clickable, .mySlides:hover {
+    cursor: pointer;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* Container for all products */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns per row */
+    gap: 100px; /* Space between cards */
+    padding: 20px;
+    max-width: 1200px; /* Max width for the grid */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Individual product card styling */
+.product-card {
+    background-color: #fff; /* White background for each card */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.3s ease; /* Smooth scaling effect on hover */
+}
+
+/* Product image styling */
+.product-image {
+    width: 100%;
+    height: auto;
+    max-width: 200px; /* Limit the image size */
+    margin-bottom: 15px;
+}
+
+/* Product name styling */
+.product-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Add to Cart button styling */
+.add-to-cart-btn {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.add-to-cart-btn:hover {
+    background-color: #0056b3; /* Darker blue when hovered */
+}
+
+/* Hover effect for product cards */
+.product-card:hover {
+    transform: translateY(-10px); /* Slightly lift the card */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1200px) {
+    .product-container {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns per row for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .product-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns per row for small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-container {
+        grid-template-columns: 1fr; /* 1 column per row for very small screens */
+    }
+}
+
+/* Footer */
+footer {
+    background: transparent; /* Dark background for footer */
+    color: white; /* White text for visibility */
+    padding: 2px 0; /* Padding for spacing */
+    font-family: Arial, sans-serif; /* Clean font */
+    display: flex; /* Using Flexbox for layout */
+    justify-content: space-between; /* Distribute space between sections */
+    align-items: center; /* Align items vertically at the center */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    position: fixed; /* Fix the footer to the bottom */
+    bottom: 0; /* Position at the bottom of the screen */
+    left: 0; /* Ensure it spans the full width */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it stays on top of other content */
+    gap: 50px; /* Space between items */
+}
+
+/* Footer Section Container */
+footer div {
+    flex: 1 1 auto; /* Allow flexible space allocation */
+    display: flex; /* Enable Flexbox for individual elements */
+    justify-content: center; /* Center by default */
+    align-items: center;
+    margin-bottom: 0;
+}
+
+/* Utility Classes for Alignment */
+.align-left {
+    justify-content: flex-start; /* Align content to the left */
+}
+
+.align-center {
+    justify-content: center; /* Center-align content */
+}
+
+.align-right {
+    justify-content: flex-end; /* Align content to the right */
+}
+
+/* Footer Logo */
+footer div img {
+    width: 100px; /* Logo size */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 10px;
+}
+
+/* Footer Text */
+footer p {
+    font-size: 15px; /* Text size */
+    margin: 0; /* Remove margin */
+    text-align: left; /* Center-align text */
+}
+
+/* Social Icons Container */
+.social-icons {
+    display: flex; /* Enable Flexbox for social icons */
+    justify-content: center; /* Center-align by default */
+    gap: 20px; /* Space between icons */
+}
+
+/* Individual Social Icon */
+.social-icon {
+    width: 40px; /* Icon size */
+    height: 40px; /* Icon size */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center-align all items */
+        text-align: center;
+        padding: 20px 10px; /* Add more padding for better spacing */
+        background: transparent; /* Unique gradient background */
+        
+    }
+
+    .align-left {
+        order: 1; /* Move the text section to the bottom */
+        justify-content: center;
+        margin-bottom: 10px; /* Add spacing below text */
+        font-size: 16px; /* Slightly larger font size for better readability */
+        color: #ddd; /* Light color for contrast */
+        font-weight: 500; /* Add some boldness to the text */
+    }
+
+    .align-center {
+        order: 0; /* Place the logo at the top */
+        margin-bottom: 20px; /* Add spacing below logo */
+        transform: rotate(-10deg); /* Slight rotation for a dynamic effect */
+        transition: transform 0.3s ease; /* Smooth rotation transition */
+    }
+
+    .align-center:hover {
+        transform: rotate(0deg); /* Reset rotation on hover for interaction */
+    }
+
+    .social-icons {
+        order: 2; /* Place the social icons in the middle */
+        margin-top: 5px; /* Increase space above icons */
+        justify-content: center; /* Ensure icons are centered */
+        gap: 20px; /* Increase spacing between icons */
+    }
+
+    footer p {
+        order: 3; /* Place the copyright text at the bottom */
+        font-size: 14px; /* Slightly larger text for mobile */
+        margin-top: -50px; /* Add space between text and icons */
+        line-height: 1.5; /* Improve readability */
+        color: #ddd; /* Light color for contrast */
+        text-align: center;
+    }
+
+    footer div img {
+        width: 80px; /* Adjust logo size for mobile */
+        height: auto; /* Maintain aspect ratio */
+        transition: transform 0.3s ease; /* Smooth scaling effect */
+    }
+
+    footer div img:hover {
+        transform: scale(1.1); /* Slightly scale the logo on hover */
+    }
+
+    .social-icon {
+        width: 40px; /* Increase size of social icons */
+        height: 40px;
+        transition: transform 0.3s ease, filter 0.3s ease; /* Smooth scaling and color filter on hover */
+    }
+
+    .social-icon:hover {
+        transform: scale(1.2); /* Slight zoom on hover */
+        filter: brightness(1.3); /* Brighten the icons on hover */
+    }
+}
